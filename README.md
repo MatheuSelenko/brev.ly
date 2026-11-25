@@ -60,7 +60,7 @@ Com o banco já rodando (`docker compose up -d`):
 ```bash
 cd server
 docker build -t brevly-server .
-docker run --rm -p 3333:3333 --env-file .env \
+docker run --rm --init -p 3333:3333 --env-file .env \
   -e DATABASE_URL=postgresql://docker:docker@host.docker.internal:5432/brevly \
   brevly-server
 ```
