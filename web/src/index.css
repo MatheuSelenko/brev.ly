@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Open Sans", sans-serif;
+
+  --color-*: initial;
+
+  --color-white: #FFFFFF;
+  --color-blue-base: #2C46B1;
+  --color-blue-dark: #2C4091;
+  --color-gray-100: #F9F9FB;
+  --color-gray-200: #E4E6EC;
+  --color-gray-300: #CDCFD5;
+  --color-gray-400: #74798B;
+  --color-gray-500: #4D505C;
+  --color-gray-600: #1F2025;
+  --color-danger: #B12C4D;
+
+  --text-xl: 24px;
+  --text-xl--line-height: 32px;
+  --text-xl--font-weight: 700;
+
+  --text-lg: 18px;
+  --text-lg--line-height: 24px;
+  --text-lg--font-weight: 700;
+
+  --text-md: 14px;
+  --text-md--line-height: 18px;
+  --text-md--font-weight: 600;
+
+  --text-sm: 12px;
+  --text-sm--line-height: 16px;
+  --text-sm--font-weight: 400;
+
+  --text-xs: 10px;
+  --text-xs--line-height: 14px;
+  --text-xs--font-weight: 400;
+
+  --animate-loading-bar: loading-bar 1.2s ease-in-out infinite;
+
+  @keyframes loading-bar {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(300%);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gray-200 text-gray-600 antialiased;
+  }
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-blue-base) transparent;
+}
