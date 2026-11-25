@@ -12,6 +12,7 @@ import { listLinksRoute } from './routes/list-links'
 import { getOriginalUrlRoute } from './routes/get-original-url'
 import { incrementLinkAccessRoute } from './routes/increment-link-access'
 import { deleteLinkRoute } from './routes/delete-link'
+import { exportLinksRoute } from './routes/export-links'
 
 // const server = fastify()
 const server = fastify().withTypeProvider<ZodTypeProvider>()
@@ -40,6 +41,7 @@ server.register(listLinksRoute)
 server.register(getOriginalUrlRoute)
 server.register(incrementLinkAccessRoute)
 server.register(deleteLinkRoute)
+server.register(exportLinksRoute)
 
 server.get('/health', async () => {
   return { ok: true }
