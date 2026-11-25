@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: brevly-db
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-docker}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-docker}
+      - POSTGRES_DB=${POSTGRES_DB:-brevly}
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql
+volumes:
+  db:
