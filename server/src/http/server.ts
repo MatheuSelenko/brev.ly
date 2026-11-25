@@ -34,6 +34,7 @@ server.setErrorHandler((error, request, reply) => {
 
 server.register(fastifyCors, {
   origin: '*',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
 })
 
 server.register(createLinkRoute)
